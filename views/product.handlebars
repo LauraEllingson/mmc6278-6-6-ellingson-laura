@@ -1,4 +1,15 @@
-
+<!-- 👇Remove this markup when converting to a handlebars template 👇 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Music Store</title>
+</head>
+<body>
+<!-- 👆Remove this markup when converting to a handlebars template👆 -->
   <header>
   <div class="header-container">
     <a href="/">
@@ -11,14 +22,14 @@
 <main>
   <section id="product-container">
     <!-- replace with product image and name -->
-    {{#each product}}
+    {{#with product}}
     <img src="/images/{{image}}" alt="{{name}}"/>
     <!-- replace form action id # with product id -->
-      <form method="POST" action="/api/cart?inventoryId=1">
+      <form method="POST" action="/api/cart?inventoryId={{id}}">
         <!-- replace with product name -->
         <h2>{{name}}</h2>
         <!-- replace with product description -->
-        <p>{{description}}.</p>
+        <p>{{description}}</p>
         <!-- replace with product price -->
         <p>${{price}}</p>
         <label for="quantity-input">
@@ -34,9 +45,14 @@
         </label>
         <button>Add to Cart</button>
       </form>
+      {{/with}}
   </section>
   <a href="/" id="returnToStore">Return to Store Page</a>
 </main>
 <footer>
   <p>&copy; Music Shop</p>
 </footer>
+<!-- 👇Remove this markup when converting to a handlebars template 👇 -->
+</body>
+</html>
+<!-- 👆Remove this markup when converting to a handlebars template👆 -->
