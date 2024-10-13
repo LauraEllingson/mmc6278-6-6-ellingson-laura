@@ -11,6 +11,7 @@
 <main>
   <section id="product-container">
     <!-- replace with product image and name -->
+    {{#each product}}
     <img src="/images/{{image}}" alt="{{name}}"/>
     <!-- replace form action id # with product id -->
       <form method="POST" action="/api/cart?inventoryId=1">
